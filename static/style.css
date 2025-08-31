@@ -1,0 +1,161 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'AmericanPurpose';
+  src:  url('AmericanPurpose-109L.ttf') format('truetype'),
+}
+
+/* Theme Colors */
+
+:root {
+    --theme-main-h: 358;
+    --theme-main-s: 69%;
+    --theme-main-l: 32%;
+    --theme-main: hsl(var(--theme-main-h), var(--theme-main-s), var(--theme-main-l));
+    --theme-main-darken: hsl(var(--theme-main-h), var(--theme-main-s), calc(var(--theme-main-l) - 10%));
+    --theme-main-lighten: hsl(var(--theme-main-h), var(--theme-main-s), calc(var(--theme-main-l) + 10%));
+
+    --background-main-h: 0;
+    --background-main-s: 0%;
+    --background-main-l: 25%;
+    --background-main: hsl(var(--background-main-h), var(--background-main-s), var(--background-main-l));
+    --background-main-darken: hsl(var(--background-main-h), var(--background-main-s), calc(var(--background-main-l) - 10%));
+    --background-main-lighten: hsl(var(--background-main-h), var(--background-main-s), calc(var(--background-main-l) + 10%));
+}
+
+/* Site-wide styles */
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+title, style {display:none;}
+body {
+  /* background:var(--background-main); */
+  font-family: roboto, sans-serif;
+  color:white;
+  display:block;
+    background-image:
+    url(/static/asfalt-dark.png),
+    linear-gradient(
+        -167deg,
+        #444444 0%,
+        #444444 100%
+    );
+}
+a, h1, h2, h3 {
+    font-family: 'Glegoo', serif;
+}
+h2 {
+    font-size:3em;
+}
+@media only screen and (max-width: 600px) {
+    h2 {
+        font-size:2em;
+    }
+}
+/* ::selection {
+  background: #0004;
+} */
+.materialShadow {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.materialShadowHover {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: 0.2s ease-out;
+}
+.materialShadowHover:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition: 0.2s ease-out;
+}
+a {
+    color: white;
+}
+
+/* Layout */
+
+header, nav {
+    width: 100%;
+    text-align: center;
+    color:white;
+}
+header {
+    background: #0004;
+    background-image: url("/static/topBanner.jpg");
+    background-position: center;
+    background-size: cover;
+    display:flex;
+    justify-content: center;
+    padding-bottom:15px;
+}
+
+/* Header */
+
+header .logo {
+    width: 160px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+}
+
+header .logo img, header .logo a img {
+    margin-top:15px;
+    max-width:100%;
+    max-height:100%;
+}
+
+#headerTitleContainer {
+    margin: 0 15px;
+}
+#headerTitle {
+    font-family: 'anton', 'roboto', 'AmericanPurpose';
+    text-transform: capitalize;
+    font-size: 2.8em;
+}
+#headerSubtitle {
+    font-family: 'Devonshire';
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+nav a {
+    flex: 0 1 auto;
+    font-size:1.4em;
+    margin: 0 15px;
+}
+
+/* Body */
+
+.hero {
+    min-height:50vh;
+    width:100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 999px) {
+    header .logo {
+        display:none;
+    }
+}
+
+footer {
+    background:
+    url(/static/asfalt-dark.png), rgb(112, 24, 42);
+    box-shadow: inset 0px 15px 45px -15px black;
+    padding: 15px;
+    display: block;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Glegoo';
+}
+footer li {
+    list-style: none;
+}
